@@ -1,0 +1,22 @@
+{
+    "name": "jmsbrone/graphql-php8",
+    "description": "Library for defining GraphQL schema with attributes",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jmsbrone\\Graphql\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jmsbrone",
+            "email": "jms.brone@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0",
+        "webonyx/graphql-php": "^14.11"
+    }
+}
