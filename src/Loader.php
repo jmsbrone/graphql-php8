@@ -56,6 +56,7 @@ class Loader
             'int', Type::INT => Type::int(),
             'bool', Type::BOOLEAN => Type::boolean(),
             'float', Type::FLOAT => Type::float(),
+            default => null,
         };
 
         if (empty($type)) {

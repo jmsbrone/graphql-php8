@@ -21,7 +21,7 @@ class ReflectionHelper
      * @param string $class Attribute class to find in method attributes
      * @return Attribute|null Instance of first found attribute of requested class or null
      */
-    public static function getMethodAttribute(ReflectionMethod $method, string $class): ?Attribute
+    public static function getMethodAttribute(ReflectionMethod $method, string $class): mixed
     {
         $attributes = $method->getAttributes($class);
 
@@ -35,7 +35,7 @@ class ReflectionHelper
      * @param string $class Attribute class to find in argument attributes
      * @return Attribute|null Instance of first found attribute of requested class or null
      */
-    public static function getArgumentAttribute(ReflectionParameter $argument, string $class): ?Attribute
+    public static function getArgumentAttribute(ReflectionParameter $argument, string $class): mixed
     {
         $attributes = $argument->getAttributes($class);
 
@@ -49,7 +49,7 @@ class ReflectionHelper
      * @param string $class Attribute class to find in class property
      * @return Attribute|null Attribute instance if found or null
      */
-    public static function getPropertyAttribute(ReflectionProperty $property, string $class): ?Attribute
+    public static function getPropertyAttribute(ReflectionProperty $property, string $class): mixed
     {
         $attributes = $property->getAttributes($class);
 
@@ -62,7 +62,7 @@ class ReflectionHelper
      * @param ReflectionAttribute[] $attributes List of attributes
      * @return Attribute|null Attribute instance if found or null
      */
-    protected static function getFirstAttributeIfExists(array $attributes): ?Attribute
+    protected static function getFirstAttributeIfExists(array $attributes): mixed
     {
         if (count($attributes) > 0) {
             $attribute = $attributes[0]->newInstance();
