@@ -2,6 +2,7 @@
 
 namespace Jmsbrone\Graphql;
 
+use GraphQL\Type\Definition\NullableType;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
 use Jmsbrone\Graphql\exceptions\TypeNotFoundException;
@@ -46,10 +47,10 @@ class Loader
      * Returns graphql type object by its name.
      *
      * @param string $name Name of the type to retrieve. Must be either built-in or name it was registered with
-     * @return Type
+     * @return Type|NullableType
      * @throws TypeNotFoundException
      */
-    public function getTypeByName(string $name): Type
+    public function getTypeByName(string $name): Type|NullableType
     {
         $type = match ($name) {
             'string', Type::STRING => Type::string(),
