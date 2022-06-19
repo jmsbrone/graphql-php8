@@ -46,7 +46,7 @@ class Service
     {
         $result = GraphQL::executeQuery($this->schema, $query, [], null, $variables);
 
-        return $result->toArray($this->debugMode ? DebugFlag::INCLUDE_DEBUG_MESSAGE | DebugFlag::INCLUDE_TRACE : null);
+        return $result->toArray($this->debugMode ? DebugFlag::INCLUDE_DEBUG_MESSAGE | DebugFlag::INCLUDE_TRACE : 0);
     }
 
     /**
